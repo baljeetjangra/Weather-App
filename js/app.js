@@ -13,17 +13,21 @@ window.addEventListener("load", () => {
         let long = position.coords.longitude;
         const proxy = "https://cors-anywhere.herokuapp.com/";
         const api = `${proxy}https://api.darksky.net/forecast/865600711773af8a896595316781d0c0/${lat},${long}`;
-
+        // data fetched
         fetch(api)
           .then(response => {
             return response.json();
           })
           .then(data => {
-            const { summary, temperature } = data.currently;
+            const { icon, summary, temperature } = data.currently;
 
             timeZone.textContent = data.timezone;
             temperatureDegree.textContent = temperature;
             temperatureDescription.textContent = summary;
+
+            //skycons
+            setIcons(icon, document.querySelector(".skyicon"));
+            // temerature change
             let celcius = (temperature - 32) * (5 / 9);
             Temperature.addEventListener("click", () => {
               if (temperatureSpan.textContent === "F") {
@@ -40,5 +44,12 @@ window.addEventListener("load", () => {
         alert("Please Allow GeoLocation To Work Application.");
       }
     );
+  }
+  //skycons
+  function setIcons(icon, iconId) {
+    let skycons = new Skycons({ color: "white" });
+    let currentIcon = icon.replace(/-/g, "_").toUpperCase();
+    skycons.play();
+    return skycons.set(iconId, Skycons[currentIcon]);
   }
 });
