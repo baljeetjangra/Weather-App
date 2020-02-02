@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(#2474c4, #4357ca);
+  height: 100vh;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+  padding: 0 0.2em;
+}
+span {
+  font-size: 2rem;
+}
+
+main {
+  color: white;
+  text-align: center;
+}
+.timezone-location {
+  display: flex;
+  width: 60%;
+  margin: 10em auto 5em;
+  justify-content: space-around;
+}
+p {
+  margin: 0.5em 0;
+}
+.temperature {
+  display: flex;
+  justify-content: center;
+  /* margin-bottom: 5em; */
+  cursor: pointer;
+  border: 1px solid white;
+  width: 12%;
+  margin: 0 auto 5em;
+}
+.temperature-description {
+  font-size: 1.5rem;
+}
