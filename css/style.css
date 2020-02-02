@@ -50,6 +50,9 @@ p {
     margin-top: 1em;
     text-align: center;
   }
+  .temperature {
+    margin: 1em auto;
+  }
   canvas {
     width: 100%;
   }
