@@ -48,6 +48,7 @@ p {
   .timezone-location {
     flex-direction: column;
     margin-top: 1em;
+    text-align: center;
   }
   canvas {
     width: 100%;
